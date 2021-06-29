@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>慢慢來｜預約、租借</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap&subset=chinese-traditional" rel="stylesheet">
+    <link rel="stylesheet" href="aos-master/aos-master/dist/aos.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+   <style>
+          *{box-sizing: border-box;}
+        *{padding: 0;margin: 0;}
+.navbar{
+    position: sticky;
+    width: 100%;
+    background: rgba(68, 68, 68, 0.733);
+    justify-content: space-between;
+    z-index: 9999;
+    height:70px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.logo{
+margin-left: 20px;
+/* padding: 10px 0; */
+display: flex;
+
+
+}
+.logo img{
+margin-top: -15px;
+    
+    width: 60px;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+}
+.logo p{
+    /* display: flex; */
+    /* align-items: center; */
+    font-size: 30px;
+    font-weight: 100;
+    text-shadow: 1px 1px 5px rgb(253, 229, 229);
+    color: #fff;
+    font-family: 'Noto Sans TC', sans-serif;
+    margin-top: -3px 0 0;
+
+}
+.list{
+    display: flex;
+    align-items: center; 
+} 
+.list li{
+    list-style: none;
+}
+.list li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 70px;
+    padding: 0 30px;
+    color: #fff;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    transition: 0.5s;
+    }
+    .list li a:hover{
+    background: coral;
+    color: #000;
+
+    }
+    .list a span{
+    position: relative;
+    }
+    .list span::before {
+        content: "";
+        position: absolute;
+        bottom: -30%;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: #353434;
+        transform-origin: bottom right;
+        transform: scaleX(0);
+        transition: transform 0.5s ease;
+        }
+
+    .list span:hover::before {
+        transform-origin: bottom left;
+        transform: scaleX(1);
+        }
+
+       .li-before{
+           position: relative;
+       } 
+        .li-before::before{
+        content: "";
+        display: block;
+        height: 35px;
+        left: -1px;
+        position: absolute;
+        top: 20px;
+        width: 1.5px;
+        background: rgba(255, 255, 255, 0.56);
+
+        }  
+
+.slower{
+    margin-top: 10px;
+}
+h1{
+    font-size: 45px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+    text-align: center;
+ 
+    }
+
+/* 展開 */
+.accordion{
+    margin-top: 30px;
+}
+.accordion-heading .accordion-toggle:before{
+content: "－";
+}
+.accordion-heading .accordion-toggle.collapsed:before{
+content: "＋";
+}
+.accordion{
+    background: rgba(240, 128, 128, 0.596);
+    
+}
+
+.accordion-heading{
+    margin: 10px;
+    
+}
+
+.accordion-toggle{
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+
+}
+.accordion-toggle:hover{
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 2px rgb(90, 90, 90);
+    text-decoration: none;
+}
+
+.accordion-inner{
+background: rgb(247, 197, 197);
+}
+.home:hover{
+    color: rgb(233, 130, 130);
+}
+.date{
+    margin: 10px 0;
+}
+
+.input-logo{
+    filter: drop-shadow(1px 1px 5px rgb(0, 0, 0));
+    width: 160px;
+    margin: 0 auto;
+}
+.bg img{
+    padding: 5px;
+}
+
+footer{
+    background: rgb(49, 65, 94);
+    padding: 8px;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.726);
+    font-size: 14px;
+}
+footer p{
+    margin: 0;
+    /* height: 360px; */
+}
+.show-fist{
+    /* height: 200px; */
+}
+.btn2{
+    
+    justify-content: right;
+}
+@media(max-width: 1000px){
+    .logo{
+                /* margin: 0 auto; */
+                margin-top: 10px;
+            }
+    .navbar{
+                height: 100%;
+               justify-content: center;
+
+    }
+    .list{
+        height: 70px;
+        margin-top: 10px;
+    }
+    .soon{
+        display: block;
+    }
+    .soon .col-md-6 {
+        max-width: 960px;
+        
+    }
+   .bg{
+       display: none;
+      
+   }
+  .btn2{
+    display: flex;
+
+  }
+   .btn2 button{
+       text-align: center;
+   width: 100%;
+   margin:0 5px;
+   margin-bottom: 5px;
+   /* padding: 10px; */
+   }
+
+}
+
+@media(max-width: 767px){
+    .show-fist{
+        /* height:220px; */
+    }
+}
+    </style>
+  </head>
+  <body>
+        <header>
+     
+                <div class="navbar d-flex">
+                <a href="home.html" class="home">
+                    <div class="logo">
+                        <img src="images/s-logo.svg" alt="">
+                        <p>慢慢來工作室</p>
+                 </div>
+                </a>
+                 <div class="list">
+                         <ul class="d-flex">
+                         <li>
+                             <a href="home.html"><span>首頁</span></a>
+                         </li>
+                         <div class="li-before"></div>
+     
+                         <li><a href="photographer.2.html"><span>攝影師列表</span></a></li>
+                         <div class="li-before"></div>
+     
+                         <li><a href="reservation.html"><span>器材租借&預約</span></a></li>
+                         <div class="li-before"></div>
+     
+                         <!-- <li><a href="contact-us.html"><span>聯絡我們</span></a></li> -->
+     
+                          </ul>
+                 </div>
+             </div>
+     
+     </header>
+
+     <div class="container">
+         
+         <h1 class="slower"><span>慢慢來．租借方案介紹 及 使用規範</span></h1>
+            
+         <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                            【攝影棚 ● 租借方案】
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="block accordion-body collapse show show-fist">
+                        <div class="accordion-inner">
+                                <p>粉紅牆:拍照1500元/時，錄影1500元/時</p>
+                                <p>灰牆牆:拍照1500元/時，錄影1500元/時</p>
+                                <p>諾可可:拍照2500元/時，錄影3500元/時</p>
+
+                                <h5 ><strong>【優惠方案】</strong></h5>
+                                <p>   單棚最少使用時數為2小時起，第3小時後可混搭其他棚
+                                    一日租借4小時以上，第5小時開始享有8折優惠
+                                    婚紗/商業/長期使用的攝影師另有其他更優惠方案，可私訊粉專詢問</p>
+                             
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                【相機 / 鏡頭 / 設備 租借方案】
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                               <p>SONY A7S2  $800</p> 
+                                <p>SONY A7R3  $1000</p>
+                                <p>SONY 24-70mm F2.8 GM $700</p>
+                                <p>SONY 55mm F1.8 $400</p>
+                                <p>CANON 5D3  $700</p>
+                                <p>CANON 35mm F1.4 L  $500</p>
+                                <p>CANON 85mm F1.2 L II  $500</p>
+                                <p>CANON 16-35mm F2.8 L  $400</p>
+                                <p>棚燈神牛QT 600II  $500</p>
+                                <p>電動三軸穩定器 RONIN-S  $700</p>
+                                <p>電動三軸穩定器 RONIN-L  $1200</p>
+                               <p> SONY 收音MINIMIC  $400</p>
+                                <p>腳架or燈架 $  200</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                                【攝影師 ● 租借方案】
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                           <p>平面or動態攝影師 ：$2000/小時</p>
+                            <p>＊協助拍攝或錄製花絮，特殊需求可FB私訊或電洽詢問</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFore">
+                                【攝影棚租借 : 規格介紹】
+                        </a>
+                    </div>
+                    <div id="collapseFore" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                          <p>每棚有10多盞仿日光持續燈，無需打燈，晚上也可以拍的像白天</p>
+                          <p>營業時間24小時營業，任何時間都能拍喔</p>
+                          <p>每棚皆為獨立使用不會與人共用，但高樓層下樓梯可能會經過</p>
+                          <p>每棚含有 高演色性柔光持續燈/燈架/藍芽喇叭，各1組提供免費使用</p>
+                          <p>含有背景紙，顏色為黑、灰、白、紅、黃、綠、粉紅</p>
+                          <p>攝影棚會不時調整與添購新擺設，到現場可能會有意外小驚喜</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+                                【攝影棚租借 : 相關規範】
+                        </a>
+                    </div>
+                    <div id="collapseFive" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                           <p>總人數上限6人，攝影師上限2人</p>
+                            <p>總人數多1人100元/時，攝影多1人500元/時</p>
+                            <p>可提早30分鐘整裝，如有需要需提前告知</p>
+                            <p>如有需要更多化妝時間，每增加1小時酌收費用500元</p>
+                            <p>同時段預約採取先付訂金為優先，後預約者會將訂金退還</p>
+                            <p>如要更改預約日期，請於拍攝日期的兩個禮拜前告知</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section>
+           <div class="container">
+               <br>
+              
+                <h1 class="text-center">立即預約</h1>
+                <br>
+            <div class="row soon">
+                <div class="col-md-6 bg">
+                    <img src="images/big-bg2.jpg" alt="" width="100%">
+                    <img src="images/big-bg.jpg" alt="" width="100%">
+                </div>
+
+                <div class="col-md-6">
+               
+                    <div class="row">
+                    <img class="input-logo " src="images/s-logo.svg" alt="">
+                </div>
+                        <form role="form">
+                                <div class="form-group">
+                                    <label for="name">名子</label>
+                                    <input type="text" class="form-control" id="name" placeholder="請輸入本名(姓氏+名子)">
+                                    <label for="name">人數</label>
+                                    <select class="form-control" >
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                         </select>
+                                    <label for="name">信箱</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Ex:avatar12025@gmail.com">
+                                    <label for="name">手機</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Ex:0965412584">
+                                   <div class="date">
+                                    <label for="bookdate">日期：</label>
+                                    <input type="date" id="bookdate" placeholder="2014-09-18"><br>
+                                    </div>
+                                    <label for="name">特殊需求請留言!</label>
+		                            <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                        </form>
+                        <div class=" text-right btn2 ">
+                            <button type="reset" class="btn btn-danger">清空</button>
+                            <button type="submit" class="btn btn-primary">送出</button>
+
+                         </div>
+                </div>
+            </div>
+           </div>
+
+        </section>
+
+        <footer >
+                <p>©2019-SlowlyDespacito &nbsp;&nbsp;&nbsp;&nbsp;慢慢來工作室 : 平面攝影 X 動態錄影 X 音樂製作</p>
+            </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="aos-master/aos-master/dist/aos.js"></script>
+   <script src="201806091442/assets/js/tempusdominus-bootstrap-4.js"></script>
+   
+   <script>
+    AOS.init();
+  </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+
+
+  
+</body>
+</html>

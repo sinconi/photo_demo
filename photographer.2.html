@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>慢慢來｜攝影師列表</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap&subset=chinese-traditional" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    
+
+  <style>
+  *{box-sizing: border-box;}
+    *{padding: 0;margin: 0;}
+
+    .d-flex{
+    display: flex;
+}
+.a-center{
+    margin: 0 auto;
+}
+
+p{
+    font-family: 'Noto Sans TC', sans-serif;
+
+}
+
+.navbar{
+    position: sticky;
+    width: 100%;
+    background: rgba(68, 68, 68, 0.733);
+    justify-content: space-between;
+    z-index: 9999;
+    height:70px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.logo{
+margin-left: 20px;
+/* padding: 10px 0; */
+display: flex;
+
+
+}
+.logo img{
+margin-top: -15px;
+    
+    width: 60px;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+}
+.logo p{
+    /* display: flex; */
+    /* align-items: center; */
+    font-size: 30px;
+    font-weight: 100;
+    text-shadow: 1px 1px 5px rgb(253, 229, 229);
+    color: #fff;
+    font-family: 'Noto Sans TC', sans-serif;
+    margin-top: -3px 0 0;
+
+}
+.list{
+    display: flex;
+    align-items: center; 
+} 
+.list li{
+    list-style: none;
+}
+.list li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 70px;
+    padding: 0 30px;
+    color: #fff;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    transition: 0.5s;
+    }
+    .list li a:hover{
+    background: coral;
+    color: #000;
+
+    }
+    .list a span{
+    position: relative;
+    }
+    .list span::before {
+        content: "";
+        position: absolute;
+        bottom: -30%;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: #353434;
+        transform-origin: bottom right;
+        transform: scaleX(0);
+        transition: transform 0.5s ease;
+        }
+
+    .list span:hover::before {
+        transform-origin: bottom left;
+        transform: scaleX(1);
+        }
+
+       .li-before{
+           position: relative;
+       } 
+        .li-before::before{
+        content: "";
+        display: block;
+        height: 35px;
+        left: -1px;
+        position: absolute;
+        top: 20px;
+        width: 1.5px;
+        background: rgba(255, 255, 255, 0.56);
+
+        }  
+
+        @media (max-width: 900px){
+            .logo{
+                margin: 0 auto;
+                margin-top: 10px;
+            }
+            .navbar{
+                height: 130px;
+               justify-content: center;
+
+            }
+            .list{
+               margin-top: -10px;
+            }
+        }
+
+
+/* ///攝影師選單按鈕//// */
+.clearfix{
+    position: sticky;
+    z-index: 99999;
+}
+.grapher-btn .row{
+   justify-content:center
+}
+.grapher-btn{
+    position: absolute;
+    background: rgba(252, 194, 194, 0.853);
+
+}
+.introduce{
+    position: relative;
+}
+.tabs-nav li{
+list-style: none;
+cursor: pointer;
+border-right: 1px solid rgb(218, 218,218);
+/* position: relative; */
+-webkit-box-shadow:1px 0  rgb(255,255,255);
+box-shadow:1px 0  rgb(255,255,255);
+
+}
+.tabs-nav a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background: lightcoral;
+    margin: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    display: block;
+/* position: relative; */
+}
+.tabs-nav a:hover,.tabs-nav a.active{
+    background: rgb(250, 178, 178);
+    box-shadow: 1px 1px 3px rgb(107, 107, 107);
+    margin: 10px 5px;
+    padding: 10px 22px;
+
+}
+/* .tabs-nav a.active::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 37px;
+    height: 19px;
+    margin-left: -18px;
+} */
+/* .section-body{
+    height: 400px;
+    position: relative;
+} */
+ /*////攝影師 ///// */
+       .row{
+        
+            justify-content: center;
+       }
+        .nini{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 15px;
+            border: 2px solid rgba(82, 82, 82, 0.911);
+            box-shadow: 1.5px 2px 5px rgb(43, 43, 43);
+            align-self:center;
+        }
+
+        
+        .Photo1{
+            font-family: 'Noto Sans TC', sans-serif;
+            margin: 20px 40px;
+        }
+        .Photo1 p{
+            margin: 0;
+            font-size: 20px;
+        }
+        .big{
+           margin:5px 0; 
+           letter-spacing: 1px;
+        }
+        .ig2{
+            width: 30px;
+            margin-right: 5px;
+        }
+        .iphone{
+            width: 30px;
+            margin-right: 5px;
+
+        }
+
+h1{
+    font-size: 45px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+}
+h1 span{
+    /* display: block; */
+    position: relative;
+}
+h1 span::before, h1 span::after{
+    content: "";
+    position: absolute;
+    top: 52%;
+    background: rgb(40, 71, 85);
+    width: 180%;
+    height: 2px;
+}
+ h1 span::before{
+    left:-50%;
+    transform: translateX(-80%);
+}
+ h1 span::after{
+    right:-50%;
+    transform: translateX(80%);
+
+}
+.viewPhoto h1{
+    text-align: center;
+    justify-content: center;
+}
+.viewPhoto-bg{
+    background: rgb(252, 252, 247);
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.644);
+    padding: 10px;
+   
+}
+.viewPhoto-w {
+    display: block;
+   padding: 0;
+   list-style: none;
+   
+}
+.viewPhoto-w li {
+    width: 33.3%;
+    margin: 0;
+
+}
+.viewPhoto figure{
+margin: 10px;
+/* height: 300px; */
+
+}
+.viewPhoto figure img{
+    width: 100%;
+    height:100%;
+    object-fit:cover;
+    /* margin: 10px; */
+}
+.camera-icon{
+    display: flex;
+    /* margin:10px 0; */
+    margin-left: 30px;
+    position: relative;
+}
+.camera-icon img{
+    width: 48px;
+
+}
+
+.camera-icon p{
+    display: flex;
+    align-items: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 24px;
+    padding: 10px;
+    padding-bottom: 0px;
+    font-weight: 300;
+}
+
+.btn{
+    background: lightcoral;
+}
+.hurry a{
+    color: #fff;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgb(56, 42, 42);
+    padding: 10px 40px;
+    transition: .5s;
+}
+footer{
+    background: rgb(49, 65, 94);
+    padding: 8px;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.726);
+    font-size: 14px;
+}
+footer p{
+    margin: 0;
+    /* height: 360px; */
+}
+
+.yourElement {
+
+animation-iteration-count: 3;
+}
+
+
+
+/*--------------------- RWD區塊---------- */
+@media(max-width: 1000px){
+    h1 span::before, h1 span::after{
+    content: "";
+    position: absolute;
+    top: 52%;
+    background: rgb(40, 71, 85);
+    width: 100%;
+    height: 2px;
+}
+h1 span::before{
+    left:-50%;
+    transform: translateX(-70%);
+}
+ h1 span::after{
+    right:-50%;
+    transform: translateX(70%);
+
+}
+}
+
+@media(max-width: 900px){
+    
+    .list ul{
+        margin: 0;
+    }
+    h1 span::before, h1 span::after{
+    content: "";
+    position: absolute;
+    top: 52%;
+    background: rgb(40, 71, 85);
+    width: 60%;
+    height: 2px;
+}
+h1 span::before{
+    left:-50%;
+    transform: translateX(-50%);
+}
+ h1 span::after{
+    right:-50%;
+    transform: translateX(50%);
+
+}
+
+.viewPhoto-w{
+    flex-direction: column;
+
+}
+.viewPhoto-w li {
+    width: 100%;
+}
+
+}
+
+
+
+@media(max-width: 767px){
+    .Photo1 h2{
+        text-align: center;
+    }
+}
+
+
+/* 調整圖片 */
+.item{
+    
+         margin-bottom: 10px;
+        padding-left: 5px;
+       padding-right: 5px;
+      
+   }
+.col-md-3{
+    width: 25%;
+}
+.col-md-4{
+    width: 20%;
+}
+ .item img{
+     max-width: 100%;
+     display: block;
+     height: auto;
+     opacity: 0.7;
+     transition: 0.5s;
+ }
+ .item img:hover{
+    opacity: 1;
+    position: sticky;
+    transform: scale(1.8);
+    z-index: 99999;
+    cursor: pointer;
+    border: 2px solid rgba(0, 0, 0, 0.664);
+ }
+
+ .viewPhoto-bg{
+     width: 100%;
+ }
+ .home:hover{
+    color: rgb(233, 130, 130);
+}
+
+</style>
+
+
+
+
+</head>
+  <body>
+
+<header>
+     
+           <div class="navbar d-flex">
+                <a href="home.html" class="home">
+                        <div class="logo">
+                            <img src="images/s-logo.svg" alt="">
+                            <p>慢慢來工作室</p>
+                     </div>
+                    </a>
+            <div class="list">
+                    <ul class="d-flex">
+                        <li>
+                            <a href="home.html"><span>首頁</span></a>
+                        </li>
+                        <div class="li-before"></div>
+    
+                        <li><a href="photographer.2.html"><span>攝影師列表</span></a></li>
+                        <div class="li-before"></div>
+    
+                        <li><a href="reservation.html"><span>器材租借&預約</span></a></li>
+                        <div class="li-before"></div>
+    
+                        <!-- <li><a href="contact-us.html"><span>聯絡我們</span></a></li> -->
+                     </ul>
+            </div>
+             
+        </div>
+           
+</header>
+
+<section class="work-section" id="work">
+<header class="section-header clearfix">
+        <div class="inner container-fluid grapher-btn " id="sticker">
+                <p class="m-0 mt-1 text-center">選擇攝影師</p>
+            <div class="row ">
+                <ul class="tabs-nav photographer d-flex">
+                    <li><a href="#work1">辛可泥</a></li>
+                    <li><a href="#work2">辛大海</a></li>
+                    <li><a href="#work3">陳正沛</a></li>
+                </ul>
+            </div>
+        </div>
+</header>
+    <div class="section-body">
+        <section class="tabs-panel" id="work1">
+            <div class="container introduce">
+                    <div class="row">
+                        <img src="images/nini.jpg" class="nini" alt="">
+                        <div class="Photo1 ">
+                            <h2 >辛可泥(Nini)</h2>
+                            
+                            <p>專長 : UIUX程式設計、靜態攝影</p>
+                            <p>攝影風格:風景、街拍、寵物</p>
+                            <p>常用設備:Sony A7ii+16-35za</p>
+                               
+                                    <div class="d-flex big">
+                                    <img class="ig2" src="images/instagram2.svg" alt=""><p>Instagram:nini_pigs</p>
+                                    </div>
+                                    <div class="d-flex big">
+                                        <img class="ig2" src="images/gmail.svg" alt=""><p>E:avatar12025@gmail.com</p>
+                                    </div>
+                                    <div class="d-flex big">
+                                        <img class="iphone" src="images/iphone.svg" alt=""><p>Tel : 0966999555</p>
+                                    </div>
+                        </div>
+                    </div>  
+            <div class="container">
+                    <div class="row ">
+                            <div class="viewPhoto-bg">
+                            <div class="viewPhoto">
+                                <h1><span>攝影作品</span></h1>
+                                <!-- <div class="camera-icon"> 
+                                        <img src="images/camera.svg" alt="">
+                                        <p >風景系列</p>
+                                    </div> -->
+
+                                    <div class="container">
+                                        
+                                <div class="row masonry">   
+                                        <div class="col-md-3 item">
+                                             <img src="images/DSC02988.JPG" alt=""class="img-responsive">
+                                        </div> 
+                                        <div class="col-md-3 item">
+                                                <img src="images/DSC02016.jpg" alt=""class="img-responsive">
+                                        </div>
+                                        <div class="col-md-3 item">
+                                                <img src="images/DSC02035.jpg" alt=""class="img-responsive">
+                                        </div>
+                                   <div class="col-md-3 item">
+                                                <img src="images/DSC02039.jpg" alt=""class="img-responsive">
+                                        </div>
+                                        <div class="col-md-3 item">
+                                                <img src="images/DSC02046.jpg" alt=""class="img-responsive">
+                                        </div>
+                                        <div class="col-md-3 item">
+                                                <img src="images/DSC02057.jpg" alt=""class="img-responsive">
+                                        </div>
+                                        <div class="col-md-3 item">
+                                                <img src="images/DSC02066.jpg" alt=""class="img-responsive">
+                                        </div>
+                                        <div class="col-md-3 item">
+                                                <img src="images/DSC02087.jpg" alt=""class="img-responsive">
+                                        </div>
+                                        <div class="col-md-3 item">
+                                                <img src="images/DSC02092.jpg" alt=""class="img-responsive">
+                                        </div>
+                                        <div class="col-md-3 item">
+                                                <img src="images/DSC02131.jpg" alt=""class="img-responsive">
+                                        </div>
+                                        <div class="col-md-3 item">
+                                                <img src="images/DSC02110.jpg" alt=""class="img-responsive">
+                                        </div>
+                                        <div class="col-md-3 item">
+                                                <img src="images/DSC02115.jpg" alt=""class="img-responsive">
+                                        </div>
+                                      
+                                         <div class="col-md-3 item">
+                                             <img src="images/DSC05149.jpg" alt=""class="img-responsive">
+                                        </div>
+                                        <div class="col-md-3 item">
+                                            <img src="images/DSC05162.jpg" alt=""class="img-responsive">
+                                         </div>
+                                         <div class="col-md-3 item">
+                                            <img src="images/DSC05211.jpg" alt=""class="img-responsive">
+                                         </div>
+                                         <div class="col-md-3 item">
+                                            <img src="images/DSC05800.jpg" alt=""class="img-responsive">
+                                         </div>
+                                         <div class="col-md-3 item">
+                                            <img src="images/DSC05801.jpg" alt=""class="img-responsive">
+                                         </div>
+                                         <div class="col-md-3 item">
+                                            <img src="images/DSC05815.jpg" alt=""class="img-responsive">
+                                         </div>
+                                         <div class="col-md-3 item">
+                                            <img src="images/DSC08885.jpg" alt=""class="img-responsive">
+                                         </div>
+                                         <div class="col-md-3 item">
+                                            <img src="images/DSC08943.jpg" alt=""class="img-responsive">
+                                         </div>
+                                         <div class="col-md-3 item">
+                                            <img src="images/DSC08960.jpg" alt=""class="img-responsive">
+                                         </div>
+                                         <div class="col-md-3 item">
+                                            <img src="images/DSC09256.jpg" alt=""class="img-responsive">
+                                         </div>
+                                         <div class="col-md-3 item">
+                                            <img src="images/DSC09588.jpg" alt=""class="img-responsive">
+                                         </div>
+                                         <div class="col-md-3 item">
+                                            <img src="images/DSC09615.jpg" alt=""class="img-responsive">
+                                         </div>
+                                         <div class="col-md-3 item">
+                                            <img src="images/DSC09622.jpg" alt=""class="img-responsive">
+                                         </div>
+                                </div> 
+                            </div>
+
+                               
+                                <div class="row hurry">
+                                     <a href="reservation.html" class="btn yourElement animated bounceIn delay-2s" role="button">立即預約!</a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+    </section>
+    <section class="tabs-panel" id="work2">
+            <div class="container introduce">
+                    <div class="row">
+                        <img src="images/S__20103175.jpg" class="nini" alt="" >
+                        <div class="Photo1">
+                            <h2>辛大海</h2>
+                            <p>專長 :靜態攝影、動態攝影、音樂製作</p>
+                            <p>攝影風格:人像【專拍妹子】</p>
+                            <p>常用設備:Sony A7iii + 24-70G</p>
+                               
+                                    <div class="d-flex big">
+                                    <img class="ig2" src="images/instagram2.svg" alt=""><p>Instagram:nini_pigs</p>
+                                    </div>
+                                    <div class="d-flex big">
+                                        <img class="ig2" src="images/gmail.svg" alt=""><p>Email:avatar12025@gmail.com</p>
+                                    </div>
+                                    <div class="d-flex big">
+                                        <img class="iphone" src="images/iphone.svg" alt=""><p>Tel : 0966999555</p>
+                                    </div>
+                        </div>
+                    </div>  
+                    <div class="container">
+                            <div class="row">
+                            <div class="viewPhoto-bg">
+                            <div class="viewPhoto">
+                                <h1><span>攝影作品</span></h1>
+                                <div class="camera-icon"> 
+                                        <img src="images/camera.svg" alt="">
+                                        <p >商品攝影</p>
+                                    </div>
+                                <ul class="viewPhoto-w d-flex">
+                                    <li class="viewPhoto-h">
+                                        <figure class="viewPhoto-f1">
+                                            <img src="images/D13 (1).jpg" alt="" > 
+                                        </figure>
+                                    </li>
+                
+                                    <li>
+                                        <figure class="viewPhoto-f1">
+                                            <img src="images/D13 (2).jpg"alt="">
+                                        </figure>
+                                    </li>
+                                    <li>
+                                        <figure class="viewPhoto-f1">
+                                            <img src="images/D13 (3).jpg" alt="">
+                                        </figure>
+                                    </li>
+                                </ul>
+                
+                                <div class="camera-icon"> 
+                                        <img src="images/camera.svg" alt="">
+                                        <p >人像攝影</p>
+                                    </div>
+                                <ul class="viewPhoto-w d-flex">
+                                    <li class="viewPhoto-h">
+                                        <figure class="viewPhoto-f1">
+                                            <img src="images/Li03.png" alt="">
+                                        </figure>
+                                    </li>
+                
+                                    <li>
+                                        <figure class="viewPhoto-f1">
+                                            <img src="images/P1130383.png"  alt="">
+                                        </figure>
+                                    </li>
+                                    <li>
+                                        <figure class="viewPhoto-f1">
+                                            <img src="images/DSC00640.png"alt="">
+                                        </figure>
+                                    </li>
+                                </ul>
+                
+                                <div class="camera-icon"> 
+                                        <img src="images/camera.svg" alt="">
+                                        <p>棚拍</p>
+                                    </div>
+                                <ul class="viewPhoto-w d-flex">
+                                    <li class="viewPhoto-h">
+                                        <figure class="viewPhoto-f1">
+                                            <img src="images/P1240378.png" alt="">
+                                        </figure>
+                                    </li>
+                
+                                    <li>
+                                        <figure class="viewPhoto-f1">
+                                            <img src="images/DSC00313.jpg" alt="">
+                                        </figure>
+                                    </li>
+                                    <li>
+                                        <figure class="viewPhoto-f1">
+                                            <img src="images/P1180638.png" alt="">
+                                        </figure>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="row hurry">
+                                    <a href="reservation.html" class="btn yourElement animated bounceIn delay-2s" role="button">立即預約!</a>
+                               </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+         </section>
+
+
+         <section class="tabs-panel" id="work3">
+                <div class="container introduce">
+                        <div class="row">
+                            <img src="images/_CP05712-2.jpg" class="nini" alt="">
+                            <div class="Photo1">
+                                <h2>陳正沛</h2>
+                                <p>專長 : 靜態攝影、動態攝影</p>
+                                <p>攝影風格:風景、商攝、活動紀錄</p>
+                                <p>常用設備:Nikon</p>
+                                   
+                                        <div class="d-flex big">
+                                        <img class="ig2" src="images/instagram2.svg" alt=""><p>Instagram:nini_pigs</p>
+                                        </div>
+                                        <div class="d-flex big">
+                                            <img class="ig2" src="images/gmail.svg" alt=""><p>Email:avatar12025@gmail.com</p>
+                                        </div>
+                                        <div class="d-flex big">
+                                            <img class="iphone" src="images/iphone.svg" alt=""><p>Tel : 0966999555</p>
+                                        </div>
+                            </div>
+                        </div> 
+                        <div class="container">
+                                <div class="row">
+                                        <div class="viewPhoto-bg">
+                                        <div class="viewPhoto">
+                                            <h1><span>攝影作品</span></h1>
+                                            <div class="camera-icon"> 
+                                                    <img src="images/camera.svg" alt="">
+                                                    <p >風景系列</p>
+                                                </div>
+                                            <ul class="viewPhoto-w d-flex">
+                                                <li class="viewPhoto-h">
+                                                    <figure>
+                                                        <img src="images/DSC_0050.jpg" alt=""style="height: 228px;">
+                                                    </figure>
+                                                </li>
+                            
+                                                <li>
+                                                    <figure>
+                                                        <img src="images/DSC_4767.jpg" alt="">
+                                                    </figure>
+                                                </li>
+                                                <li>
+                                                    <figure>
+                                                        <img src="images/DSC_4800.jpg" alt="">
+                                                    </figure>
+                                                </li>
+                                            </ul>
+                            
+                                            <div class="camera-icon"> 
+                                                    <img src="images/camera.svg" alt="">
+                                                    <p >動物系列</p>
+                                                </div>
+                                            <ul class="viewPhoto-w d-flex">
+                                                <li class="viewPhoto-h">
+                                                    <figure>
+                                                        <img src="images/_DSC3801.jpg" alt="">
+                                                    </figure>
+                                                </li>
+                            
+                                                <li class="viewPhoto-h">
+                                                    <figure>
+                                                        <img src="images/_DSC3851.jpg"  alt="">
+                                                    </figure>
+                                                </li>
+                                                <li class="viewPhoto-h">
+                                                    <figure>
+                                                        <img src="images/_DSC3801.jpg"alt="">
+                                                    </figure>
+                                                </li>
+                                            </ul>
+                            
+                                            <div class="camera-icon"> 
+                                                    <img src="images/camera.svg" alt="">
+                                                    <p>商品攝影</p>
+                                                </div>
+                                            <ul class="viewPhoto-w d-flex">
+                                                <li class="viewPhoto-h">
+                                                    <figure>
+                                                        <img src="images/_CP01173.jpg" alt="">
+                                                    </figure>
+                                                </li>
+                            
+                                                <li>
+                                                    <figure>
+                                                        <img src="images/_CP01177.jpg" alt="">
+                                                    </figure>
+                                                </li>
+                                                <li>
+                                                    <figure>
+                                                        <img src="images/_CP01196.jpg" alt="" >
+                                                    </figure>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                   
+
+                                        <div class="row hurry ">
+                                         <a href="reservation.html" class="btn yourElement animated bounceIn delay-2s" role="button" >立即預約!</a>
+
+                                    </div>
+                                   </div>
+                              </div>
+                            </div>
+                            </div>
+         </section>
+</div>
+</section>
+
+<footer>
+        <p>©2019-SlowlyDespacito &nbsp;&nbsp;&nbsp;&nbsp;慢慢來工作室 : 平面攝影 X 動態錄影 X 音樂製作</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="garand-sticky-1.0.4-4-g73b0fbe/garand-sticky-73b0fbe/jquery.sticky.js"></script>
+  <!-- <script src="masonry-master/masonry-master/dist/masonry.pkgd.js"></script>
+  <script src="mmasonry-master/masonry-master/dist/masonry.pkgd.min.js"></script> -->
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#sticker").sticky({topSpacing:0});
+    });
+  </script>
+
+<!-- 點攝影師名子回到上面 -->
+<script>
+ $(".tabs-nav li").on("click",
+                function () {
+                    console.log(123)
+                    window.scrollTo({
+                        top: 90,
+                        behavior: "smooth"
+                    });
+                }
+            )
+
+
+</script>
+<script>
+$(function(){
+
+$("#work").each(function(){
+    var $tabList=$(this).find(".tabs-nav"),
+        $tabAnchors=$tabList.find("a"),
+        $tabPanels=$(this).find(".tabs-panel");
+
+        $tabList.on("click","a",function (event){
+          event.preventDefault();
+
+          var $this=$(this);
+          if($this.hasClass("active")){
+              return;
+          }
+
+          $tabAnchors.removeClass("active");
+          $this.addClass("active");
+
+          $tabPanels.hide();
+          $($this.attr("href")).show();
+        });
+        $tabAnchors.eq(0).trigger("click");
+})
+})
+
+</script>
+
+<script>
+    // $('.box').masonry({
+    //       itemSelector: 'item',
+    //   });
+
+    $(function(){
+            $('.masonry').masonry({
+                itemSelector: '.item'
+                  });
+                });
+  </script>
+    <!-- <script>
+    $('.masonry').masonry({
+
+  itemSelector: '.item',
+  columnWidth: 300,
+  gutter:10
+});
+    </script> -->
+
+   <!-- <script>
+   var grid = document.querySelector('.masonry');
+   var msnry = new Masonry( grid, { 
+       itemSelector: '.item',
+    columnWidth: 200
+});
+   </script>  -->
+</body>
+</html>
